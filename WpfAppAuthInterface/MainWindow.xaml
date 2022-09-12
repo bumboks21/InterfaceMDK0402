@@ -5,39 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppAuthInterface"
         mc:Ignorable="d"
-        Title="Login" Height="400" Width="300" Background="LightSlateGray">
+        Title="ФИО" Height="450" Width="500" FontSize="24" Background="CornflowerBlue" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="0.6*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Sign in" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
-
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Text="Login" Margin="55,45,0,30" FontSize="18"/>
-            <TextBlock Grid.Row="1" Text="Password" Margin="45,30,0,45" FontSize="18"/>
-            <TextBox x:Name="LoginBox" Grid.Column="1" Margin="0,45,30,30" TextAlignment="Left"/>
-            <PasswordBox x:Name="PswrdBox" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45"/>
-            <TextBox x:Name="PswrdBoxx" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Hidden"/>
+        <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
-        </Grid>
-        <CheckBox x:Name="ShowPswrdBox" Grid.Row="2" Content="Show password" Margin="150,-15,30,0" HorizontalAlignment="Right" Checked="ShowPswrdBox_Checked" Unchecked="ShowPswrdBox_Unchecked"/>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="SignUpBtn" Content ="Sign up" Margin="25" Click="SignUpBtn_Click"/>
-            <Button x:Name="SignInBtn" Content ="Sign in" Grid.Column="1" Margin="25" Click="SignInBtn_Click"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="Фамилия" Margin="30,10,30,60"/>
+                    <TextBox x:Name="SurnameBox" Margin="10,50,10,20" Background="LightBlue"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock Text="Имя" Margin="55,10,55,60"/>
+                    <TextBox x:Name="NameBox" Margin="10,50,10,20" Background="LightBlue"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <TextBlock Text="Отчество" Margin="30,10,30,60"/>
+                    <TextBox x:Name="PatronymicBox" Margin="10,50,10,20" Background="LightBlue"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ListBox x:Name="FIO_List" Margin="120,20,120,20" Background="LightBlue"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button x:Name="ShowButton" Content="Отобразить" Margin="150,30,150,30" Background="LightSteelBlue" Click="ShowButton_Click"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
