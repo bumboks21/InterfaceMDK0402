@@ -39,16 +39,20 @@ namespace WpfAppAuthInterface
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginBox.Text == "" || PswrdBox.Password == "" || PswrdBoxx.Text == "")
-                MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-            else if (LoginBox.Text == "qwerty" && PswrdBox.Password == "123456" || PswrdBoxx.Text == "123456")
+            string Login, Password, ShowPassword;
+            Login = LoginBox.Text;
+            Password = PswrdBox.Password;
+            ShowPassword = PswrdBoxx.Text;
+            User user = new User();
+            bool result = user.CheckingUser(Login, Password, ShowPassword);
+            if (result == true)
             {
-                MessageBox.Show("Вход успешно выполнен!", "", MessageBoxButton.OK);
                 FIO fio = new FIO();
                 fio.Show();
-                Hide();
+                this.Close();
             }
-            else MessageBox.Show("Введены неверные данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Hand);
+            else
+                MessageBox.Show("Ошибка аутентификации","Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
@@ -59,7 +63,7 @@ namespace WpfAppAuthInterface
             MessageBox.Show("Логин: " + Login + "\tПароль: " + Password, "Регистрация прошла успешно!", MessageBoxButton.OK);
             FIO fio = new FIO();
             fio.Show();
-            Hide();
+            this.Close();
         }
     }
 }
