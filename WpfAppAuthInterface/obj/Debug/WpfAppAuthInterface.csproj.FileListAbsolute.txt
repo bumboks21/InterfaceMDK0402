@@ -13,3 +13,5 @@ E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\WpfAppAuthInterfa
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\WpfAppAuthInterface.csproj.CoreCompileInputs.cache
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\WpfAppAuthInterface.exe
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\WpfAppAuthInterface.pdb
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\FIO.g.cs
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\FIO.baml

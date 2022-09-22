@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FIO.xaml.cs">
+      <DependentUpon>FIO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="ShowFIO.cs" />
+    <Page Include="FIO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
