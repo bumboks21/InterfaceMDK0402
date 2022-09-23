@@ -47,12 +47,12 @@ namespace WpfAppAuthInterface
             bool result = user.CheckingUser(Login, Password, ShowPassword);
             if (result == true)
             {
-                FIO fio = new FIO();
-                fio.Show();
+                TimeTable TimeTbl = new TimeTable();
+                TimeTbl.Show();
                 this.Close();
             }
             else
-                MessageBox.Show("Ошибка аутентификации","Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Ошибка аутентификации", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
@@ -61,8 +61,6 @@ namespace WpfAppAuthInterface
             Login = LoginBox.Text;
             Password = PswrdBox.Password;
             MessageBox.Show("Логин: " + Login + "\tПароль: " + Password, "Регистрация прошла успешно!", MessageBoxButton.OK);
-            FIO fio = new FIO();
-            fio.Show();
             this.Close();
         }
     }

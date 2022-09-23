@@ -1,0 +1,17 @@
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.csproj.AssemblyReference.cache
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO.g.cs
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\MainWindow.g.cs
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\App.g.cs
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf_MarkupCompile.cache
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf_MarkupCompile.lref
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\bin\Debug\FIO_Wpf.exe.config
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\bin\Debug\FIO_Wpf.exe
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\bin\Debug\FIO_Wpf.pdb
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO.baml
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\MainWindow.baml
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.g.resources
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.Properties.Resources.resources
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.csproj.GenerateResource.cache
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.csproj.CoreCompileInputs.cache
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.exe
+E:\ProektVS2\WpfAppAuthInterface\FIO_Wpf\obj\Debug\FIO_Wpf.pdb

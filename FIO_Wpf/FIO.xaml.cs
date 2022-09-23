@@ -43,10 +43,5 @@ namespace WpfAppAuthInterface
                 SurnameBox.Text = ""; NameBox.Text = ""; PatronymicBox.Text = "";
             }
         }
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            App.Current.Shutdown();
-        }
     }
 }

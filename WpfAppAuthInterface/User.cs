@@ -19,8 +19,8 @@ namespace WpfAppAuthInterface
             {
                  new User()
                  {
-                    Login="Chupep",
-                    Password="SIIUUU"
+                    Login="qwerty",
+                    Password="123456"
                  }
             };
             return userList;
