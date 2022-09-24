@@ -17,3 +17,7 @@ E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\TimeTable.g.cs
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\TimeTable.baml
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\Assets\Styles\StyleDictionary1.baml
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\App.baml
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\TimeTablePage.g.cs
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\TimeTablePage.baml
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\ImageWindow.g.cs
+E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\obj\Debug\ImageWindow.baml

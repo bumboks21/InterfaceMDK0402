@@ -1,0 +1,45 @@
+﻿<Page x:Class="WpfAppAuthInterface.TimeTablePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppAuthInterface"
+      mc:Ignorable="d" 
+      d:DesignHeight="290" d:DesignWidth="760"
+      Title="TimeTablePage" Background="LightGray" FontSize="18">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Выберите учителя:" Margin="5" VerticalAlignment="Center"/>
+            <Grid Grid.Column="1">
+                <ComboBox x:Name="TeacherBox" Margin="125,10,50,10"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Выберите предмет:" Margin="5" VerticalAlignment="Center"/>
+            <Grid Grid.Column="1">
+                <ComboBox x:Name="SubjectBox" Margin="125,10,50,10"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button x:Name="AddButton" Content="Добавить" Margin="600,5,20,5"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <ListBox Margin="10"/>
+        </Grid>
+    </Grid>
+</Page>

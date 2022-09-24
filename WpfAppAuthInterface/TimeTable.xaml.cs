@@ -22,6 +22,17 @@ namespace WpfAppAuthInterface
         public TimeTable()
         {
             InitializeComponent();
+            MainFrame.Navigate(new TimeTablePage());
+        }
+
+        private void TimeTblButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new TimeTablePage());
+        }
+
+        private void TeacherButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ImageWindow());
         }
     }
 }

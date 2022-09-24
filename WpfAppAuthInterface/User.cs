@@ -21,6 +21,16 @@ namespace WpfAppAuthInterface
                  {
                     Login="qwerty",
                     Password="123456"
+                 },
+                 new User()
+                 {
+                     Login="Chupep",
+                     Password="Uzbekiston"
+                 },
+                 new User()
+                 {
+                     Login="Mercedes",
+                     Password="c180"
                  }
             };
             return userList;
@@ -31,7 +41,6 @@ namespace WpfAppAuthInterface
             {
                 if (user.Login == Login && (user.Password == Password || user.ShowPassword == ShowPassword))
                     return true;
-                else return false;
             }
             return false;
         }
