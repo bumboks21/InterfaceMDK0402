@@ -5,15 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfAppAuthInterface"
       mc:Ignorable="d" 
-      d:DesignHeight="290" d:DesignWidth="760"
-      Title="TimeTablePage" Background="LightGray" FontSize="18">
+      d:DesignHeight="390" d:DesignWidth="760"
+      Title="TimeTablePage" Background="LightGray" FontSize="16">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -36,10 +35,12 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2">
-            <Button x:Name="AddButton" Content="Добавить" Margin="600,5,20,5"/>
-        </Grid>
-        <Grid Grid.Row="3">
-            <ListBox Margin="10"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddButton" Grid.Column="2" Content="Добавить" Margin="10,75,10,115" Click="AddButton_Click"/>
+            <ListView x:Name="SubjectTeacherListView" Margin="10"/>
         </Grid>
     </Grid>
 </Page>

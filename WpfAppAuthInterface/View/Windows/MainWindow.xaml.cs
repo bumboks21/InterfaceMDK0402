@@ -20,9 +20,12 @@ namespace WpfAppAuthInterface
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowViewModel _mainViewModel;
+        Binding binding = new Binding();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _mainViewModel = new MainWindowViewModel();
         }
         private void ShowPswrdBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -39,28 +42,16 @@ namespace WpfAppAuthInterface
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-            string Login, Password, ShowPassword;
-            Login = LoginBox.Text;
-            Password = PswrdBox.Password;
-            ShowPassword = PswrdBoxx.Text;
-            User user = new User();
-            bool result = user.CheckingUser(Login, Password, ShowPassword);
+            (DataContext as MainWindowViewModel).Auth();
+            AuthHelper AH = new AuthHelper();
+            bool result = AH.AuthHelp(LoginBox.Text, PswrdBoxx.Text);
             if (result == true)
-            {
-                TimeTable TimeTbl = new TimeTable();
-                TimeTbl.Show();
                 this.Close();
-            }
-            else
-                MessageBox.Show("Ошибка аутентификации", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
-            string Login, Password;
-            Login = LoginBox.Text;
-            Password = PswrdBox.Password;
-            MessageBox.Show("Логин: " + Login + "\tПароль: " + Password, "Регистрация прошла успешно!", MessageBoxButton.OK);
+            MessageBox.Show("Логин: " + LoginBox.Text + "\tПароль: " + PswrdBoxx.Text, "Регистрация прошла успешно!", MessageBoxButton.OK);
             this.Close();
         }
     }

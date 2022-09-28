@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppAuthInterface"
         mc:Ignorable="d"
-        Title="TimeTable" Height="450" Width="800">
+        Title="TimeTable" Height="550" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="0.2*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="TimeTblButton" Content="Расписание" Margin="15,20,5,20" Click="TimeTblButton_Click"/>
+                <Button x:Name="TimeTblButton" Content="Расписание" Margin="15,20,5,20" Click="TimeTblButton_Click" Style="{DynamicResource ButtonStyle2}"/>
                 <Grid Grid.Column="1">
                     <Button x:Name="TeacherButton" Content="Учитель" Margin="5,20,15,20" Click="TeacherButton_Click"/>  
                 </Grid>

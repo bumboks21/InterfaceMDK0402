@@ -1,7 +1,7 @@
 ﻿
 FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\App.xaml;;
-FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\MainWindow.xaml;;
-FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\TimeTable.xaml;;
-FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\TimeTablePage.xaml;;
-FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\ImageWindow.xaml;;
+FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\View\Pages\ImagePage.xaml;;
+FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\View\Windows\MainWindow.xaml;;
+FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\View\Windows\TimeTable.xaml;;
+FE:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\View\Pages\TimeTablePage.xaml;;
 

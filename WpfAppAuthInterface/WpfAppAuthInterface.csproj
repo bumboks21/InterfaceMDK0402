@@ -56,25 +56,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ImageWindow.xaml.cs">
-      <DependentUpon>ImageWindow.xaml</DependentUpon>
+    <Compile Include="Model\AuthHelper.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="Model\FileWorker.cs" />
+    <Compile Include="View\Pages\ImagePage.xaml.cs">
+      <DependentUpon>ImagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TimeTable.xaml.cs">
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="Model\Subject.cs" />
+    <Compile Include="Model\Teacher.cs" />
+    <Compile Include="View\Windows\TimeTable.xaml.cs">
       <DependentUpon>TimeTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TimeTablePage.xaml.cs">
+    <Compile Include="View\Pages\TimeTablePage.xaml.cs">
       <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Model\TimeTableShow.cs" />
+    <Compile Include="Model\User.cs" />
     <Page Include="Assets\Styles\StyleDictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ImageWindow.xaml">
+    <Page Include="View\Pages\ImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -82,15 +89,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TimeTable.xaml">
+    <Page Include="View\Windows\TimeTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TimeTablePage.xaml">
+    <Page Include="View\Pages\TimeTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,6 +130,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\bmw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Files\Lesson.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Files\Teachers.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

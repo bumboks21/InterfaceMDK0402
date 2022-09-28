@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppAuthInterface"
         mc:Ignorable="d"
-         Title="Login" Height="400" Width="300" Background="LightSlateGray">
+         Title="Login" Height="400" Width="300" Background="LightSlateGray" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -22,15 +22,15 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="Login" Margin="55,45,0,30" FontSize="18"/>
             <TextBlock Grid.Row="1" Text="Password" Margin="45,30,0,45" FontSize="18"/>
-            <TextBox x:Name="LoginBox" Grid.Column="1" Margin="0,45,30,30" TextAlignment="Left"/>
-            <PasswordBox x:Name="PswrdBox" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45"/>
-            <TextBox x:Name="PswrdBoxx" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Hidden"/>
+            <TextBox x:Name ="LoginBox" Text="{Binding Login}" Grid.Column="1" Margin="0,45,30,30" TextAlignment="Left"/>
+            <PasswordBox x:Name="PswrdBox" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Hidden"/>
+            <TextBox x:Name="PswrdBoxx" Text="{Binding Password}" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Visible"/>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
         </Grid>
-        <CheckBox x:Name="ShowPswrdBox" Grid.Row="2" Content="Show password" Margin="150,-15,30,0" HorizontalAlignment="Right" Checked="ShowPswrdBox_Checked" Unchecked="ShowPswrdBox_Unchecked"/>
+        <CheckBox x:Name="ShowPswrdBox" Grid.Row="2" Content="Show password" Margin="150,-15,30,0" HorizontalAlignment="Right" Checked="ShowPswrdBox_Checked" Unchecked="ShowPswrdBox_Unchecked" Visibility="Hidden"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

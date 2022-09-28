@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\App.xaml
-5338374970
+5389684296
 
-9983097118
+16966196260
 14-1004149723
-Assets\Styles\StyleDictionary1.xaml;ImageWindow.xaml;MainWindow.xaml;TimeTable.xaml;TimeTablePage.xaml;
+Assets\Styles\StyleDictionary1.xaml;View\Pages\ImagePage.xaml;View\Windows\MainWindow.xaml;View\Windows\TimeTable.xaml;View\Pages\TimeTablePage.xaml;
 
 False
 
