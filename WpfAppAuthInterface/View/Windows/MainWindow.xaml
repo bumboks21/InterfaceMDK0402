@@ -37,7 +37,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="SignUpBtn" Content ="Sign up" Margin="25" Click="SignUpBtn_Click"/>
-            <Button x:Name="SignInBtn" Content ="Sign in" Grid.Column="1" Margin="25" Click="SignInBtn_Click"/>
+            <Button Command="{Binding SignInBtn}" Content ="Sign in" Grid.Column="1" Margin="25"/>
         </Grid>
     </Grid>
 </Window>

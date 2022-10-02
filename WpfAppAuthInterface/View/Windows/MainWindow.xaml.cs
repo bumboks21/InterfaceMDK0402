@@ -40,14 +40,14 @@ namespace WpfAppAuthInterface
             PswrdBox.Password = PswrdBoxx.Text;
         }
 
-        private void SignInBtn_Click(object sender, RoutedEventArgs e)
-        {
-            (DataContext as MainWindowViewModel).Auth();
-            AuthHelper AH = new AuthHelper();
-            bool result = AH.AuthHelp(LoginBox.Text, PswrdBoxx.Text);
-            if (result == true)
-                this.Close();
-        }
+        //private void SignInBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    (DataContext as MainWindowViewModel).Auth();
+        //    AuthHelper AH = new AuthHelper();
+        //    bool result = AH.AuthHelp(LoginBox.Text, PswrdBoxx.Text);
+        //    if (result == true)
+        //        this.Close();
+        //}
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {

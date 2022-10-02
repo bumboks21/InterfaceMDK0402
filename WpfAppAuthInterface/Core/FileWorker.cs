@@ -13,7 +13,7 @@ namespace WpfAppAuthInterface
         public ObservableCollection<Teacher> TeacherWork()
         {
             var teacherList = new ObservableCollection<Teacher>();
-            using (StreamReader teacherReader = new StreamReader(@"E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\Assets\Files\Teachers.txt"))
+            using (StreamReader teacherReader = new StreamReader(@"..\..\Assets\Files\Teachers.txt"))
             {
                 foreach (var item in teacherReader.ReadToEnd().Split('\n'))
                 {
@@ -37,7 +37,7 @@ namespace WpfAppAuthInterface
         public ObservableCollection<Subject> SubjectWork()
         {
             var subjectList = new ObservableCollection<Subject>();
-            using (StreamReader subjectReader = new StreamReader(@"E:\ProektVS2\WpfAppAuthInterface\WpfAppAuthInterface\Assets\Files\Lesson.txt"))
+            using (StreamReader subjectReader = new StreamReader(@"..\..\Assets\Files\Lesson.txt"))
             {
                 foreach (var item in subjectReader.ReadToEnd().Split('\n'))
                 {

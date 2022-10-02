@@ -56,9 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\AuthHelper.cs" />
+    <Compile Include="Core\AuthHelper.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="Model\FileWorker.cs" />
+    <Compile Include="Core\FileWorker.cs" />
+    <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="View\Pages\ImagePage.xaml.cs">
       <DependentUpon>ImagePage.xaml</DependentUpon>
     </Compile>
@@ -72,7 +73,7 @@
       <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\TimeTableShow.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="OldClasses\User.cs" />
     <Page Include="Assets\Styles\StyleDictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,8 +138,6 @@
   <ItemGroup>
     <Resource Include="Assets\Files\Teachers.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using WpfAppAuthInterface.ViewModel;
 
 namespace WpfAppAuthInterface
 {
@@ -31,28 +33,65 @@ namespace WpfAppAuthInterface
                 OnPropertyChanged(nameof(Password));
             }
         }
+        //public MainWindowViewModel()
+        //{
+        //    _authHelper = new AuthHelper();
+        //}
+        //public void Auth()
+        //{
+        //    if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
+        //    {
+        //        MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        return;
+        //    }
+        //    else
+        //    if (_authHelper.AuthHelp(Login, Password))
+        //    {
+        //        MessageBox.Show("Вы успешно авторизовались", "Вход", MessageBoxButton.OK);
+        //        TimeTable TimeTbl = new TimeTable();
+        //        TimeTbl.Show();
+        //        foreach (Window w in App.Current.Windows)
+        //        {
+        //            if (w.Title == "Login")
+        //                w.Close();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Такого пользователя не существует.\nПожалуйста, проверьте введенные данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Hand);
+        //    }
+        //}
+        public ICommand SignInBtn
+        {
+            get;
+        }
         public MainWindowViewModel()
         {
             _authHelper = new AuthHelper();
+            SignInBtn = new DelegateCommand(Authorization);
         }
-        public void Auth()
+        private void Authorization(object obj)
         {
-            if (string.IsNullOrEmpty(Login)||string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
             {
-                MessageBox.Show("Заполните все поля!","Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
             else
-            if (_authHelper.AuthHelp(Login,Password))
+            if (_authHelper.AuthHelp(Login, Password))
             {
-                MessageBox.Show("Вы успешно авторизовались","Вход",MessageBoxButton.OK);
+                MessageBox.Show("Вы успешно авторизовались", "Вход", MessageBoxButton.OK);
                 TimeTable TimeTbl = new TimeTable();
                 TimeTbl.Show();
-                //MainWindow mw = new MainWindow();
-                //mw.Close();
+                foreach (Window w in App.Current.Windows)
+                {
+                    if (w.Title == "Login")
+                        w.Close();
+                }
             }
             else
             {
-                MessageBox.Show("Такого пользователя не существует.\nПожалуйста, проверьте введенные данные","Ошибка",MessageBoxButton.OK,MessageBoxImage.Hand);
+                MessageBox.Show("Такого пользователя не существует.\nПожалуйста, проверьте введенные данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
     }
