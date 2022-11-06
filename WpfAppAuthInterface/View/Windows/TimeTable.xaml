@@ -20,7 +20,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Главное окно" VerticalAlignment="Center" Margin="10" FontSize="24"/>
                 <Grid Grid.Column="1">
-                    <TextBlock Text="ФИО:" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" Margin="10"/>
+                    <TextBlock Text="ФИО:" x:Name="FIO" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" Margin="10"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">

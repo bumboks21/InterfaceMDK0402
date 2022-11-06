@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfAppAuthInterface.Core;
 
 namespace WpfAppAuthInterface
 {
@@ -19,10 +20,12 @@ namespace WpfAppAuthInterface
     /// </summary>
     public partial class TimeTable : Window
     {
+        private readonly FileWorker worker;
         public TimeTable()
         {
             InitializeComponent();
             MainFrame.Navigate(new TimeTablePage());
+            FIO.Text += UserEnteredData.EnteredUserFIO;
         }
 
         private void TimeTblButton_Click(object sender, RoutedEventArgs e)

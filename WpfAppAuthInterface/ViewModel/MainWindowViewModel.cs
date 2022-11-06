@@ -10,10 +10,10 @@ using WpfAppAuthInterface.ViewModel;
 namespace WpfAppAuthInterface
 {
     class MainWindowViewModel : BaseViewModel
-    {
-        private readonly AuthHelper _authHelper;
+    {     
         private string _login;
         private string _password;
+        private readonly AuthHelper _authHelper;
 
         public string Login
         {
@@ -33,44 +33,16 @@ namespace WpfAppAuthInterface
                 OnPropertyChanged(nameof(Password));
             }
         }
-        //public MainWindowViewModel()
-        //{
-        //    _authHelper = new AuthHelper();
-        //}
-        //public void Auth()
-        //{
-        //    if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
-        //    {
-        //        MessageBox.Show("Заполните все поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return;
-        //    }
-        //    else
-        //    if (_authHelper.AuthHelp(Login, Password))
-        //    {
-        //        MessageBox.Show("Вы успешно авторизовались", "Вход", MessageBoxButton.OK);
-        //        TimeTable TimeTbl = new TimeTable();
-        //        TimeTbl.Show();
-        //        foreach (Window w in App.Current.Windows)
-        //        {
-        //            if (w.Title == "Login")
-        //                w.Close();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Такого пользователя не существует.\nПожалуйста, проверьте введенные данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Hand);
-        //    }
-        //}
-        public ICommand SignInBtn
+        public ICommand SignInButton
         {
             get;
         }
         public MainWindowViewModel()
         {
             _authHelper = new AuthHelper();
-            SignInBtn = new DelegateCommand(Authorization);
+            SignInButton = new DelegateCommand(Auth);
         }
-        private void Authorization(object obj)
+        private async void Auth(object obj)
         {
             if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
             {
@@ -78,21 +50,17 @@ namespace WpfAppAuthInterface
                 return;
             }
             else
-            if (_authHelper.AuthHelp(Login, Password))
+               if (await _authHelper.UserWork(Login, Password))
             {
-                MessageBox.Show("Вы успешно авторизовались", "Вход", MessageBoxButton.OK);
-                TimeTable TimeTbl = new TimeTable();
-                TimeTbl.Show();
+                TimeTable tt = new TimeTable();
+                tt.Show();
                 foreach (Window w in App.Current.Windows)
                 {
                     if (w.Title == "Login")
                         w.Close();
                 }
             }
-            else
-            {
-                MessageBox.Show("Такого пользователя не существует.\nПожалуйста, проверьте введенные данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Hand);
-            }
+            else MessageBox.Show("Введены некорректные данные");
         }
     }
 }

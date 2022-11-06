@@ -1,0 +1,7 @@
+Login;Password;Name;Surname
+qwerty;123456;HGH;JDH
+chupapi;munyanya;UGD;asjgds
+chupep;Aslanbek;HIDHF;sdfsd
+Magamet;moetpoli;Maga;m5f90
+uzbekiston;hagiwagi;Uzbek;HGD
+Lemur;bobr;Bober;Lemur

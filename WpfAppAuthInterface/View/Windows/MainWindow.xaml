@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppAuthInterface"
         mc:Ignorable="d"
-         Title="Login" Height="400" Width="300" Background="LightSlateGray" WindowStartupLocation="CenterScreen">
+         Title="Login" Height="400" Width="300" Background="#FF3A3F58" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -13,18 +13,18 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Sign in" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <TextBlock Text="Sign in" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="#FFF9AC67"/>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Login" Margin="55,45,0,30" FontSize="18"/>
-            <TextBlock Grid.Row="1" Text="Password" Margin="45,30,0,45" FontSize="18"/>
-            <TextBox x:Name ="LoginBox" Text="{Binding Login}" Grid.Column="1" Margin="0,45,30,30" TextAlignment="Left"/>
+            <TextBlock Text="Login" Margin="55,45,0,25" FontSize="18" Foreground="#FFF9AC67"/>
+            <TextBlock Grid.Row="1" Text="Password" Margin="45,30,0,45" FontSize="18" Foreground="#FFF9AC67"/>
+            <TextBox x:Name ="LoginBox" Text="{Binding Login}" Grid.Column="1" Margin="0,45,30,30" TextAlignment="Left" Background="#FFECE6CD"/>
             <PasswordBox x:Name="PswrdBox" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Hidden"/>
-            <TextBox x:Name="PswrdBoxx" Text="{Binding Password}" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Visible"/>
+            <TextBox x:Name="PswrdBoxx" Text="{Binding Password}" Grid.Row="1" Grid.Column="1" Margin="0,30,30,45" Visibility="Visible" Background="#FFECE6CD"/>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -36,8 +36,11 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="SignUpBtn" Content ="Sign up" Margin="25" Click="SignUpBtn_Click"/>
-            <Button Command="{Binding SignInBtn}" Content ="Sign in" Grid.Column="1" Margin="25"/>
+            <Button x:Name="SignUpBtn" Content ="Sign up" Margin="25" Click="SignUpBtn_Click" Background="#FFEE6A59" Foreground="#FFECE6CD"/>
+            <Button Command="{Binding SignInButton}" Content ="Sign in" Grid.Column="1" Margin="25" Background="#FFEE6A59" Foreground="#FFECE6CD"/>
         </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/fon.jpg"/>
+        </Grid.Background>
     </Grid>
 </Window>

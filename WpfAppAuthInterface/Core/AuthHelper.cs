@@ -1,54 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using WpfAppAuthInterface.Core;
 
 namespace WpfAppAuthInterface
 {
     public class AuthHelper
     {
-        //public bool AuthHelp(string login, string password)
-        //{
-        //    if (login == "qwerty" && password == "123456")
-        //        return true;
-        //    else return false;
-        //}
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string ShowPassword { get; set; }
+        public async Task<bool> UserWork(string Login, string Password)
+        {
+            using (StreamReader userReader = new StreamReader(@"..\..\Assets\Files\user.txt"))
+            {
+                var userAwait = await userReader.ReadToEndAsync();
+                List<User> userList = new List<User>();
 
-        public static ObservableCollection<AuthHelper> GetUserList()
-        {
-            var userList = new ObservableCollection<AuthHelper>()
-            {
-                 new AuthHelper()
-                 {
-                    Login="qwerty",
-                    Password="123456"
-                 },
-                 new AuthHelper()
-                 {
-                     Login="Chupep",
-                     Password="Uzbekiston"
-                 },
-                 new AuthHelper()
-                 {
-                     Login="Mercedes",
-                     Password="c180"
-                 }
-            };
-            return userList;
-        }
-        public bool AuthHelp(string Login, string Password)
-        {
-            foreach (var user in GetUserList())
-            {
-                if (user.Login == Login && user.Password == Password)
-                    return true;
+                foreach (var item in userAwait.Split('\n'))
+                {
+                    var arrayString = item.Split(';');
+                    {
+                        var user = new User()
+                        {
+                            Login = arrayString[0],
+                            Password = arrayString[1],
+                            Name = arrayString[2],
+                            Surname = arrayString[3]
+                        };
+                        if (user.Login.Contains(Login) && user.Password.Contains(Password))
+                        {
+                            UserEnteredData.EnteredUserFIO = " " + user.Name + " " + user.Surname;
+                            return true;
+                        }
+                    }
+                }
+                return false;
             }
-            return false;
         }
     }
 }
