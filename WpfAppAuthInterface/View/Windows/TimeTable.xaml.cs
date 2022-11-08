@@ -20,7 +20,6 @@ namespace WpfAppAuthInterface
     /// </summary>
     public partial class TimeTable : Window
     {
-        private readonly FileWorker worker;
         public TimeTable()
         {
             InitializeComponent();

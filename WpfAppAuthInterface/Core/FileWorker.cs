@@ -11,12 +11,13 @@ namespace WpfAppAuthInterface
 {
     class FileWorker
     {
-        public ObservableCollection<User> UserWork()
+        public async Task<ObservableCollection<User>> UserWork()
         {
             var userList = new ObservableCollection<User>();
             using (StreamReader userReader = new StreamReader(@"..\..\Assets\Files\user.txt"))
             {
-                foreach (var item in userReader.ReadToEnd().Split('\n'))
+                var userReaderAwait = await userReader.ReadToEndAsync();
+                foreach (var item in userReaderAwait.Split('\n'))
                 {
                     var arrayString = item.Split(';');
                     {
@@ -33,12 +34,14 @@ namespace WpfAppAuthInterface
                 return userList;
             }
         }
-        public ObservableCollection<Teacher> TeacherWork()
+        
+        public async Task <ObservableCollection<Teacher>> TeacherWork()
         {
             var teacherList = new ObservableCollection<Teacher>();
             using (StreamReader teacherReader = new StreamReader(@"..\..\Assets\Files\Teachers.txt"))
             {
-                foreach (var item in teacherReader.ReadToEnd().Split('\n'))
+                var teacherReaderAwait = await teacherReader.ReadToEndAsync();
+                foreach (var item in teacherReaderAwait.Split('\n'))
                 {
                     var arrayString = item.Split(',');
                     if (arrayString[0]!="ID")
@@ -50,6 +53,52 @@ namespace WpfAppAuthInterface
                             LastName=arrayString[2],
                             Login=arrayString[3],
                             Password=arrayString[4]
+                        };
+                        teacherList.Add(teacher);
+                    }
+                }
+                return teacherList;
+            }
+        }
+        public async Task<ObservableCollection<Subject>> SubjectWork()
+        {
+            var subjectList = new ObservableCollection<Subject>();
+            using (StreamReader subjectReader = new StreamReader(@"..\..\Assets\Files\Lesson.txt"))
+            {
+                var subjectReaderAwait = await subjectReader.ReadToEndAsync();
+                foreach (var item in subjectReaderAwait.Split('\n'))
+                {
+                    var arrayString = item.Split('?');
+                    if (arrayString[0] != "ID")
+                    {
+                        var subject = new Subject()
+                        {
+                            ID = int.Parse(arrayString[0]),
+                            Lesson = arrayString[1]
+                        };
+                        subjectList.Add(subject);
+                    }
+                }
+                return subjectList;
+            }
+        }
+        /*public ObservableCollection<Teacher> TeacherWork()
+        {
+            var teacherList = new ObservableCollection<Teacher>();
+            using (StreamReader teacherReader = new StreamReader(@"..\..\Assets\Files\Teachers.txt"))
+            {
+                foreach (var item in teacherReader.ReadToEnd().Split('\n'))
+                {
+                    var arrayString = item.Split(',');
+                    if (arrayString[0] != "ID")
+                    {
+                        var teacher = new Teacher()
+                        {
+                            ID = int.Parse(arrayString[0]),
+                            FirstName = arrayString[1],
+                            LastName = arrayString[2],
+                            Login = arrayString[3],
+                            Password = arrayString[4]
                         };
                         teacherList.Add(teacher);
                     }
@@ -77,6 +126,6 @@ namespace WpfAppAuthInterface
                 }
                 return subjectList;
             }
-        }
+        }*/
     }
 }

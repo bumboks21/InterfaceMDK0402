@@ -50,16 +50,16 @@ namespace WpfAppAuthInterface
                 return;
             }
             else
-               if (await _authHelper.UserWork(Login, Password))
-            {
-                TimeTable tt = new TimeTable();
-                tt.Show();
-                foreach (Window w in App.Current.Windows)
+                if (await _authHelper.UserWork(Login, Password))
                 {
-                    if (w.Title == "Login")
-                        w.Close();
+                    TimeTable tt = new TimeTable();
+                    tt.Show();
+                    foreach (Window w in App.Current.Windows)
+                    {
+                        if (w.Title == "Login")
+                            w.Close();
+                    }
                 }
-            }
             else MessageBox.Show("Введены некорректные данные");
         }
     }

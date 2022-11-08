@@ -22,22 +22,28 @@ namespace WpfAppAuthInterface
     /// </summary>
     public partial class TimeTablePage : Page
     {
-        private readonly FileWorker worker;
+        private FileWorker worker;
+
+        TimeTableShow showTT;
+       
+        private ObservableCollection<TimeTableShow> _showTT;
 
         public TimeTablePage()
         {
             InitializeComponent();
+            TimeTablePageAsync();
+        }
+        private async void TimeTablePageAsync()
+        {
             worker = new FileWorker();
-            worker.TeacherWork();
-            TeacherBox.ItemsSource = worker.TeacherWork();
+            await worker.TeacherWork();
+            TeacherBox.ItemsSource = await worker.TeacherWork();
             TeacherBox.DisplayMemberPath = "TeacherName";
-            worker.SubjectWork();
-            SubjectBox.ItemsSource = worker.SubjectWork();
+            await worker .SubjectWork();
+            SubjectBox.ItemsSource = await worker.SubjectWork();
             SubjectBox.DisplayMemberPath = "Lesson";
             _showTT = new ObservableCollection<TimeTableShow>();
         }
-        TimeTableShow showTT;
-        private ObservableCollection<TimeTableShow> _showTT;
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TeacherBox.Text) || string.IsNullOrEmpty(SubjectBox.Text))
